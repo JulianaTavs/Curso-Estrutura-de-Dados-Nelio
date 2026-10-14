@@ -15,6 +15,7 @@
   <Project Path="ExercicioInverterStringRecursividadeDeCauda/ExercicioInverterStringRecursividadeDeCauda.csproj" />
   <Project Path="FiltrarEDobrarNumerosParesTailRecursive/FiltrarEDobrarNumerosParesTailRecursive.csproj" />
   <Project Path="InverterUmaListaTailRecursion/InverterUmaListaTailRecursion.csproj" />
+  <Project Path="MinhaLinkedList/MinhaLinkedList.csproj" />
   <Project Path="PalindromeNumber/PalindromeNumber.csproj" />
   <Project Path="ProblemaContainsDuplicate/ProblemaContainsDuplicate.csproj" />
   <Project Path="ProblemaCPF/ProblemaCPF.csproj" />

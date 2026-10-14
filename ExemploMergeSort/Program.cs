@@ -1,4 +1,11 @@
-﻿public class MergeSortAlgorithm
+﻿int[] numeros = { 38, 27, 43, 3, 9, 82, 10 };
+
+Console.WriteLine("Array original: " + string.Join(", ", numeros));
+
+MergeSortAlgorithm.Sort(numeros, 0, numeros.Length - 1);
+
+Console.WriteLine("Array ordenado: " + string.Join(", ", numeros));
+static class MergeSortAlgorithm
 {
     public static void Sort(int[] array, int left, int right)
     {
