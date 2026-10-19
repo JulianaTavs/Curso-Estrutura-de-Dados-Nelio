@@ -24,5 +24,14 @@ listaEncadeada.PrintLinkedListElements();
 Console.WriteLine(listaEncadeada.GetElementAtPosition(2).Value);
 listaEncadeada.AddAtPosition(0, 15);
 listaEncadeada.PrintLinkedListElements();
+Console.WriteLine($"Posição do elemento procurado: {listaEncadeada.ElementPosition(40)}");
+Console.WriteLine($"O elemento procurado está na lista?: {listaEncadeada.IsItInTheList(40)}");
+
+
+Console.WriteLine(listaEncadeada.RemoveFromASpecificPosition(0)?.Value.ToString() ?? "Lista vazia ou posição inválida.");
+listaEncadeada.PrintLinkedListElements();
+
+Console.WriteLine(listaEncadeada.RemoveSpecificElement(40));
+listaEncadeada.PrintLinkedListElements();
 
 
