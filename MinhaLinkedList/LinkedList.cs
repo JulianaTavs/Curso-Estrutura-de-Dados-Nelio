@@ -80,24 +80,6 @@ namespace MinhaLinkedList
 
         public void AddAtStart(T value)
         {
-            //if (Head == null)
-            //{
-            //    Head = new Node<T>(value);
-            //    Size++;
-            //    return;
-            //}
-            //Node<T> temp = new Node<T>(Head.Value);
-
-            //Node<T> newNode = new Node<T>(value);
-
-            //Head.Value = newNode.Value;
-            //newNode.Value = temp.Value;
-
-            //temp.Next = Head.Next;
-            //Head.Next = newNode;
-            //newNode.Next = temp.Next;
-            //Size++;
-
             Node<T> novoNo = new Node<T>(value);
 
             novoNo.Next = Head;
@@ -263,7 +245,7 @@ namespace MinhaLinkedList
                 current = current.Next;
                 i++;
             }
-            
+
             return null; // Código morto. Como o compilador do C# exige que todos os
                          // caminhos de execução de um método que retorna algo
                          // (Node<T>) precisem retornar um valor, esse return null
@@ -276,7 +258,7 @@ namespace MinhaLinkedList
             {
                 return false;
             }
-                
+
 
             if (EqualityComparer<T>.Default.Equals(Head.Value, value))
             {
@@ -300,6 +282,38 @@ namespace MinhaLinkedList
                 current = current.Next;
             }
             return false;
+        }
+
+        public void RemoverElementosRepetidos(T value)
+        {
+            if (Head == null)
+                return;
+
+            while (Head != null && EqualityComparer<T>.Default.Equals(Head.Value, value))
+            {
+                Head = Head.Next;
+                Size--;
+            }
+
+            if (Head == null)
+                return;
+
+            Node<T> previous = Head;
+            Node<T> current = Head.Next;
+
+            while (current != null)
+            {
+                if (EqualityComparer<T>.Default.Equals(current.Value, value))
+                {
+                    previous.Next = current.Next;
+                    Size--;
+                }
+                else
+                {
+                    previous = current;
+                }
+                current = current.Next;
+            }
         }
     }
 }
