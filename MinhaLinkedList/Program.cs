@@ -23,15 +23,19 @@ listaEncadeada.PrintLinkedListElements();
 //listaEncadeada.GetElementByValue(0);
 Console.WriteLine(listaEncadeada.GetElementAtPosition(2).Value);
 listaEncadeada.AddAtPosition(0, 15);
+listaEncadeada.AddAtPosition(2, 15);
+listaEncadeada.AddAtPosition(4, 15);
 listaEncadeada.PrintLinkedListElements();
 Console.WriteLine($"Posição do elemento procurado: {listaEncadeada.ElementPosition(40)}");
 Console.WriteLine($"O elemento procurado está na lista?: {listaEncadeada.IsItInTheList(40)}");
-
-
-Console.WriteLine(listaEncadeada.RemoveFromASpecificPosition(0)?.Value.ToString() ?? "Lista vazia ou posição inválida.");
+listaEncadeada.AddAtStart(15);
 listaEncadeada.PrintLinkedListElements();
+//Console.WriteLine(listaEncadeada.RemoveFromASpecificPosition(0)?.Value.ToString() ?? "Lista vazia ou posição inválida.");
+//listaEncadeada.PrintLinkedListElements();
 
-Console.WriteLine(listaEncadeada.RemoveSpecificElement(40));
+//Console.WriteLine(listaEncadeada.RemoveSpecificElement(40));
+
+listaEncadeada.RemoverElementosRepetidos(15);
 listaEncadeada.PrintLinkedListElements();
 
 

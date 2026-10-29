@@ -3,6 +3,7 @@
   <Project Path="AlgoritmoBubbleSort/AlgoritmoBubbleSort.csproj" />
   <Project Path="CompactarSequenciaTailRecursion/CompactarSequenciaTailRecursion.csproj" />
   <Project Path="DesafioIntegracaoDeSistemas/DesafioIntegracaoDeSistemas.csproj" />
+  <Project Path="DesafioListaEncadeada/DesafioListaEncadeada.csproj" />
   <Project Path="DesafioSortBenchmark/DesafioSortBenchmark.csproj" />
   <Project Path="DesafioVendasDoDepartamento/DesafioVendasDoDepartamento.csproj" />
   <Project Path="DesafioVendasDoDepartamentoComRecursividade/DesafioVendasDoDepartamentoComRecursividade.csproj" />
