@@ -86,3 +86,19 @@ else
 {
     Console.WriteLine($"Tarefa editada: \n{tarefaEditada.Tarefa}");
 }
+
+Console.WriteLine("------------------------IMPRIMINDO TAREFAS EXISTENTES NA LISTA: ----------------------");
+
+List<Node> nodes4 = listaDeTarefas.GetTasks();
+foreach (Node item in nodes4)
+{
+    Console.WriteLine(item.Tarefa);
+}
+listaDeTarefas.MoveTask(0, 2);
+Console.WriteLine("------------------------IMPRIMINDO TAREFAS EXISTENTES NA LISTA: ----------------------");
+
+List<Node> nodes5 = listaDeTarefas.GetTasks();
+foreach (Node item in nodes5)
+{
+    Console.WriteLine(item.Tarefa);
+}

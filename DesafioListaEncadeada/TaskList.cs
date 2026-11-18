@@ -48,7 +48,7 @@
             Size++;
         }
 
-        private void AddInTheMiddle(Node newNode, int index)
+        public void AddInTheMiddle(Node newNode, int index)
         {
             if (index < 0 || index > Size)
                 return;
@@ -193,7 +193,7 @@
 
         // Vou fazer dois métodos Edittask: um que vai receber as edições dos campos da tarefa pelo console
         // durante a execução do método e outro que vai receber as edições como argumentos do método.
-        
+
         public Node EditTask(int id)
         {
             Node current = Head;
@@ -212,12 +212,13 @@
                         {
                             current.Tarefa.Descricao = descricaoNova;
                             loopContinua = false;
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("A descrição não pode estar em branco ou ser nula.");
                         }
                     }
-                    
+
                     current.Tarefa.Tipo = ConvertionTextToTaskType();
 
                     current.Tarefa.Status = ConvertionTextToStatus();
@@ -298,7 +299,7 @@
             if (!string.IsNullOrWhiteSpace(descricao))
             {
                 noParaEditar.Tarefa.Descricao = descricao;
-            } 
+            }
             if (tipo.HasValue)
             {
                 noParaEditar.Tarefa.Tipo = tipo.Value;
@@ -309,5 +310,52 @@
             }
             return noParaEditar;
         }
+
+        public void MoveTask(int indiceSource, int indiceTarget)
+        {
+            Node source = FindNode(indiceSource);
+            Node target = FindNode(indiceTarget);
+
+            if (indiceSource == indiceTarget) return;
+
+            if (source != null && target != null)
+            {
+                Task temp = source.Tarefa;
+                source.Tarefa = target.Tarefa;
+                target.Tarefa = temp;
+            } 
+        }
+        private Node FindNode(int index)
+        {
+            if (index < 0 || index >= Size)
+            {
+                return null;
+            }
+
+            Node current = Head;
+            int i = 0;
+
+            while (i != index)
+            {
+                current = current.Next;
+                i++;
+            }
+            return current;
+        }
+
+        public void MoveTask2(int idSource, int indiceTarget)
+        {
+            if (indiceTarget < 0 || indiceTarget > Size)
+                return;
+            
+            Node source = GetTaskById(idSource);
+
+            if (source == null)
+                return;
+
+            DeleteTaskById(idSource);
+            AddInTheMiddle(source, indiceTarget);
+        }
+
     }
 }
